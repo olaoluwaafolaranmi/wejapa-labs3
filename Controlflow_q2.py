@@ -10,10 +10,18 @@ winners = {1931: ['Norman Taurog'], 1932: ['Frank Borzage'], 1933: ['Frank Lloyd
 
 most_win_director = []
 # Add your code here
+win_count_dict = {}
 for winner in winners.values():
     for director in winner:
-      
-
+        if director not in win_count_dict:
+            win_count_dict[director] = 1
+        else:
+            win_count_dict[director]+=1
+count = 0
+for director, number in win_count_dict.items():
+    count = max(win_count_dict.values())    
+    if win_count_dict[director] == count:
+        most_win_director.append(director)
 
 print("most_win_director = {}".format(most_win_director))
-print(max(most_win_director))
+print(count)
