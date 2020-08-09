@@ -11,7 +11,11 @@ nom_count_dict = {}
 # Add your code here
 for nomination in nominated.values():
     for nominees in nomination:
-        nom_count_dict[nominees] = len(nominees)
+        if nominees not in nom_count_dict:
+            nom_count_dict[nominees]=1
+        else:
+            
+            nom_count_dict[nominees] +=1
 
 print("nom_count_dict = {}\n".format(nom_count_dict))
 
@@ -21,7 +25,10 @@ win_count_dict = {}
 # Add your code here
 for winner in winners.values():
     for director in winner:
-        win_count_dict[director] = len(director)
+        if director not in win_count_dict:
+            win_count_dict[director] = 1
+        else:
+            win_count_dict[director]+=1
 
 
 
